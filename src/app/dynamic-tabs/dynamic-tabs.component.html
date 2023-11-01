@@ -1,0 +1,37 @@
+<div>
+  <header class="App-header">
+    <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg=="
+             class="App-logo" alt="logo" />
+    <h1>Angular Dynamic Tabs</h1>
+  </header>
+  <ul class="nav nav-tabs" role="tablist">
+    <li class="nav-item" *ngFor="let tab of tabs; let i = index">
+      <a
+        class="nav-link"
+        [class.active]="i === activeTabIndex"
+        (click)="setActiveTab(i)"
+        href="#"
+      >
+        {{ tab.title }}
+      </a>
+    </li>
+  </ul>
+  <div class="tab-content mt-2">
+    <div
+      class="tab-pane"
+      [class.active]="i === activeTabIndex"
+      *ngFor="let tab of tabs; let i = index"
+    >
+      {{ tab.content }}
+    </div>
+  </div>
+  <button class="btn btn-primary" (click)="addTab()">
+    <fa-icon [icon]="['far', 'square-plus']">Add Tab</fa-icon>
+    Add Tab
+  </button>
+  <button class="btn btn-primary" (click)="deleteTab()">
+    <fa-icon [icon]="['far', 'trash-can']"></fa-icon>
+    Delete Tab
+  </button>
+
+</div>
