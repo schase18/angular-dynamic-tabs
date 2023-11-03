@@ -2,6 +2,14 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.8.
 
+npm install -g @angular/cli
+ng new dynamic-tabs
+cd dynamic-tabs
+npm install bootstrap@4.6.0
+npm install jquery@3.6.0
+
+Wrote code for dynamic tabs and include Bootstrap stuff. Everyone else can just copy it :-)
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
